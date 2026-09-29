@@ -1,6 +1,6 @@
 # Provenance
 
-Every published client build and, where practical, every future dataset should be traceable to its source.
+Every published client build and, where practical, every dataset record should be traceable to its source.
 
 ## Client versions
 
@@ -29,15 +29,32 @@ The validator rejects catalog entries where the stored Interface value does not 
 `upstream-derived`
 : A factual value was read from an upstream source and one or more additional values were deterministically derived from it.
 
-Future source types may include collector observations and manually verified corrections.
+`collector`
+: A fact is supported by one or more observations produced by `PallandoDataCollector`.
+
+`manual`
+: A fact was manually verified or corrected. A reference should be supplied when practical.
 
 ## Collector observations
 
-Future collector datasets should record the WoW client/build and sufficient observation metadata to distinguish:
+Collector exports record:
+
+- exact WoW client id
+- client version
+- build number
+- TOC Interface number
+- collector version
+- observation timestamp
+- optional anonymous class/race/level context
+
+Published records aggregate evidence into:
 
 - first seen
 - last seen
 - observation count
-- collector version
+- distinct observed builds
+- source descriptors
 
 Raw SavedVariables should not be published directly. Pallando's WoW Addon Studio should validate and normalize them first.
+
+See `docs/dataset-model.md` for the complete initial contract.

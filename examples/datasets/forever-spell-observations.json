@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "wow_forever.spells",
+  "kind": "spell",
+  "clientId": "wow_forever",
+  "generatedAt": "2026-09-29T18:30:00Z",
+  "records": [
+    {
+      "entityId": 12345,
+      "facts": {
+        "available": true,
+        "rank": 2
+      },
+      "evidence": {
+        "firstSeen": {
+          "build": 70009,
+          "observedAt": "2026-09-29T18:00:00Z"
+        },
+        "lastSeen": {
+          "build": 70009,
+          "observedAt": "2026-09-29T18:00:00Z"
+        },
+        "observationCount": 1,
+        "builds": [
+          70009
+        ]
+      },
+      "sources": [
+        {
+          "type": "collector",
+          "producer": "PallandoDataCollector",
+          "producerVersion": "0.1.0",
+          "reference": null
+        }
+      ]
+    }
+  ]
+}

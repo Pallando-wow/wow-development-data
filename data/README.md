@@ -2,17 +2,28 @@
 
 Large development datasets are stored below this directory and referenced from the root `catalog.json`.
 
-Planned dataset families include:
+Reserved dataset families currently include:
 
 - `api/`
-- `quests/`
-- `spells/`
-- `items/`
-- `npcs/`
-- `maps/`
-- `factions/`
-- `achievements/`
-- `professions/`
-- `pets/`
+- `event/`
+- `quest/`
+- `spell/`
+- `item/`
+- `npc/`
+- `map/`
+- `faction/`
+- `achievement/`
+- `profession/`
+- `pet-family/`
+- `pet-ability/`
+- `pet-trainer/`
 
-A dataset is added only when its schema, provenance and validation rules are defined. Empty placeholder JSON files are deliberately avoided.
+The initial published file convention is:
+
+```text
+data/<kind>/<clientId>.json
+```
+
+A dataset is added to `catalog.json` only when it contains validated records. Empty placeholder JSON files are deliberately avoided.
+
+See `docs/dataset-model.md` for observation, provenance and versioning rules.

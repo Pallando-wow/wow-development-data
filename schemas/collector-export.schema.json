@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Pallando-wow/wow-development-data/schemas/collector-export.schema.json",
+  "title": "Pallando Data Collector Export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "collector",
+    "client",
+    "locale",
+    "capturedAt",
+    "observations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "collector": {
+      "$ref": "#/$defs/collector"
+    },
+    "client": {
+      "$ref": "#/$defs/client"
+    },
+    "locale": {
+      "type": "string",
+      "pattern": "^[a-z]{2}[A-Z]{2}$"
+    },
+    "capturedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "playerContext": {
+      "$ref": "#/$defs/playerContext"
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "collector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "const": "PallandoDataCollector"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?$"
+        }
+      }
+    },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "build",
+        "interface"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "build": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "interface": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "playerContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "classToken": {
+          "type": "string",
+          "pattern": "^[A-Z_]+$"
+        },
+        "raceToken": {
+          "type": "string",
+          "pattern": "^[A-Z_]+$"
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "entityId",
+        "observedAt",
+        "facts"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "api",
+            "event",
+            "quest",
+            "spell",
+            "item",
+            "npc",
+            "map",
+            "faction",
+            "achievement",
+            "profession",
+            "pet-family",
+            "pet-ability",
+            "pet-trainer"
+          ]
+        },
+        "entityId": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "facts": {
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "string",
+                "maxLength": 256
+              },
+              {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "type": "integer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
