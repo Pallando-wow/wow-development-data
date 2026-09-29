@@ -150,9 +150,6 @@
                 "type": "boolean"
               },
               {
-                "type": "integer"
-              },
-              {
                 "type": "number"
               },
               {
