@@ -1,6 +1,6 @@
 # Dataset model
 
-This document defines the first stable data model for development-relevant WoW observations.
+This document defines the data model for development-relevant WoW observations.
 
 The model separates three stages:
 
@@ -22,7 +22,7 @@ Raw collector output is evidence. It is not published as authoritative data with
 
 ## Dataset families
 
-The first model reserves the following dataset kinds:
+The model reserves the following dataset kinds:
 
 - `api`
 - `event`
@@ -42,7 +42,7 @@ Additional kinds can be added when a concrete addon-development use case require
 
 ## Collector export
 
-`schemas/collector-export.schema.json` defines the normalized interchange format expected from a future `PallandoDataCollector`.
+`schemas/collector-export.schema.json` defines the normalized interchange format expected from `PallandoDataCollector`.
 
 A collector export contains:
 
@@ -69,10 +69,23 @@ No player name, GUID, account identifier, guild, friend, chat or device identifi
 An observation is identified by:
 
 ```text
-kind + entityId + client/build context
+kind + entity + client/build context
 ```
 
-For example, a spell observation uses `kind = spell` and a numeric spell id.
+`entity` has exactly one identity field:
+
+- `id` for numeric WoW identifiers such as quest, spell, item, NPC or map ids
+- `key` for named technical entities such as API functions and events
+
+Examples:
+
+```json
+{ "kind": "spell", "entity": { "id": 12345 } }
+{ "kind": "api", "entity": { "key": "GetBuildInfo" } }
+{ "kind": "event", "entity": { "key": "QUEST_ACCEPTED" } }
+```
+
+This avoids inventing synthetic numeric identifiers for APIs and events.
 
 Relations are represented as factual fields containing other numeric ids. Examples include:
 
@@ -81,13 +94,13 @@ Relations are represented as factual fields containing other numeric ids. Exampl
 - `spellIds`
 - `trainerNpcIds`
 
-The initial generic format intentionally keeps facts small and machine-readable. Large game-authored text and binary assets remain out of scope.
+The generic fact format intentionally remains small and machine-readable. Large game-authored text and binary assets remain out of scope.
 
 ## Published datasets
 
 Published datasets use `schemas/datasets/entity-observations.schema.json`.
 
-The initial file convention is:
+The file convention is:
 
 ```text
 data/<kind>/<clientId>.json
@@ -96,9 +109,9 @@ data/<kind>/<clientId>.json
 Examples:
 
 ```text
-data/spells/wow_forever.json
-data/quests/wow_forever.json
-data/pets/wow_forever.json
+data/spell/wow_forever.json
+data/quest/wow_forever.json
+data/pet-ability/wow_forever.json
 ```
 
 The root `catalog.json` remains the stable discovery point and references datasets only after they are actually published.
@@ -135,6 +148,8 @@ There are four separate version dimensions:
 3. client `version`, `build` and `interface` identify the WoW runtime.
 4. `generatedAt` identifies when a published dataset was produced.
 
+Collector-export schema version 2 and entity-observation schema version 2 introduce the `entity` object so numeric and named technical identities can share the same model.
+
 A schema change that breaks existing consumers increments `schemaVersion`.
 
 A new WoW build does not require a new schema version.
@@ -143,7 +158,8 @@ A new WoW build does not require a new schema version.
 
 Published files should be stable in Git:
 
-- records sorted by `entityId`
+- numeric identities sorted by `entity.id`
+- named identities sorted ordinally by `entity.key`
 - build lists sorted ascending
 - source descriptors sorted deterministically
 - UTF-8 without BOM

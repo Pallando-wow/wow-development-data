@@ -15,7 +15,7 @@
   "properties": {
     "schemaVersion": {
       "type": "integer",
-      "const": 1
+      "const": 2
     },
     "datasetId": {
       "type": "string",
@@ -55,19 +55,47 @@
     }
   },
   "$defs": {
+    "entityIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["id"],
+          "not": {
+            "required": ["key"]
+          }
+        },
+        {
+          "required": ["key"],
+          "not": {
+            "required": ["id"]
+          }
+        }
+      ]
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "entityId",
+        "entity",
         "facts",
         "evidence",
         "sources"
       ],
       "properties": {
-        "entityId": {
-          "type": "integer",
-          "minimum": 1
+        "entity": {
+          "$ref": "#/$defs/entityIdentity"
         },
         "facts": {
           "type": "object",

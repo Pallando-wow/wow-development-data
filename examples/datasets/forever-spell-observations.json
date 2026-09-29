@@ -1,12 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "datasetId": "wow_forever.spells",
   "kind": "spell",
   "clientId": "wow_forever",
   "generatedAt": "2026-09-29T18:30:00Z",
   "records": [
     {
-      "entityId": 12345,
+      "entity": {
+        "id": 12345
+      },
       "facts": {
         "available": true,
         "rank": 2
