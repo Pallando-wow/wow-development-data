@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "collector": {
+    "name": "PallandoDataCollector",
+    "version": "0.1.0"
+  },
+  "client": {
+    "id": "wow_forever",
+    "version": "1.60.1",
+    "build": 70009,
+    "interface": 16001
+  },
+  "locale": "enUS",
+  "capturedAt": "2026-09-29T18:00:00Z",
+  "playerContext": {
+    "classToken": "HUNTER",
+    "raceToken": "DWARF",
+    "level": 24
+  },
+  "observations": [
+    {
+      "kind": "spell",
+      "entityId": 12345,
+      "observedAt": "2026-09-29T18:00:00Z",
+      "facts": {
+        "available": true,
+        "rank": 2
+      }
+    },
+    {
+      "kind": "map",
+      "entityId": 678,
+      "observedAt": "2026-09-29T18:00:00Z",
+      "facts": {
+        "parentMapId": 1
+      }
+    }
+  ]
+}

@@ -22,5 +22,11 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install schema validator
+        run: python -m pip install --disable-pip-version-check jsonschema
+
       - name: Validate catalog
         run: python scripts/validate_catalog.py
+
+      - name: Validate schema examples
+        run: python scripts/validate_examples.py
