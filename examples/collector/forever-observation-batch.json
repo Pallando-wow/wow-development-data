@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "collector": {
     "name": "PallandoDataCollector",
     "version": "0.1.0"
@@ -20,7 +20,9 @@
   "observations": [
     {
       "kind": "spell",
-      "entityId": 12345,
+      "entity": {
+        "id": 12345
+      },
       "observedAt": "2026-09-29T18:00:00Z",
       "facts": {
         "available": true,
@@ -29,10 +31,22 @@
     },
     {
       "kind": "map",
-      "entityId": 678,
+      "entity": {
+        "id": 678
+      },
       "observedAt": "2026-09-29T18:00:00Z",
       "facts": {
         "parentMapId": 1
+      }
+    },
+    {
+      "kind": "api",
+      "entity": {
+        "key": "GetBuildInfo"
+      },
+      "observedAt": "2026-09-29T18:00:00Z",
+      "facts": {
+        "available": true
       }
     }
   ]
