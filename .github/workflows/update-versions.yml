@@ -1,0 +1,44 @@
+name: Update WoW client versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update versions
+        run: python scripts/update_versions.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Validate catalog
+        run: python scripts/validate_catalog.py
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          if git diff --quiet -- catalog.json; then
+            echo "No version changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json
+          git commit -m "Update WoW client versions"
+          git push

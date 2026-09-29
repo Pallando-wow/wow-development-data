@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "provider": "Gethe/wow-ui-source",
+  "repository": "Gethe/wow-ui-source",
+  "clients": [
+    {
+      "id": "wow_forever",
+      "name": "WoW Forever",
+      "branch": "forever"
+    },
+    {
+      "id": "classic_era",
+      "name": "WoW Classic Era",
+      "branch": "classic_era"
+    },
+    {
+      "id": "classic_anniversary",
+      "name": "WoW Classic Anniversary",
+      "branch": "classic_anniversary"
+    },
+    {
+      "id": "mists_classic",
+      "name": "WoW Mists of Pandaria Classic",
+      "branch": "classic"
+    },
+    {
+      "id": "classic_titan",
+      "name": "WoW Titan Reforged",
+      "branch": "classic_titan"
+    },
+    {
+      "id": "retail",
+      "name": "World of Warcraft",
+      "branch": "live"
+    }
+  ]
+}
