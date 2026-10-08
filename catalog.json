@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T11:48:17Z",
+  "generatedAt": "2026-10-08T12:03:25Z",
   "clients": [
     {
       "id": "wow_forever",
@@ -58,13 +58,13 @@
       "id": "classic_titan",
       "name": "WoW Titan Reforged",
       "version": "3.80.2",
-      "build": 69874,
+      "build": 70177,
       "interface": 38002,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic_titan@84ef503f0d2617494db84cc9c7e7b530e976f6e7",
-        "observedAt": "2026-09-17T01:01:19Z"
+        "reference": "classic_titan@0f73fd6b0e12bf8de89a8084ebd81aade0afe8d7",
+        "observedAt": "2026-10-07T19:01:16Z"
       }
     },
     {
