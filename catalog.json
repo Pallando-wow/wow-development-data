@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T11:55:03Z",
+  "generatedAt": "2026-10-10T11:11:44Z",
   "clients": [
     {
       "id": "wow_forever",
       "name": "WoW Forever",
       "version": "1.60.1",
-      "build": 70291,
+      "build": 70338,
       "interface": 16001,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "forever@9465cb273b5513495d8ecc12fbb19930dd6b8957",
-        "observedAt": "2026-10-08T20:31:55Z"
+        "reference": "forever@943764493e6b16d63ded3ab304150d1f05e58b57",
+        "observedAt": "2026-10-10T05:16:18Z"
       }
     },
     {
@@ -45,13 +45,13 @@
       "id": "mists_classic",
       "name": "WoW Mists of Pandaria Classic",
       "version": "5.5.4",
-      "build": 70032,
+      "build": 70268,
       "interface": 50504,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic@a53b9b28857fd11184573f8dda6a746a789abc0e",
-        "observedAt": "2026-09-28T23:45:57Z"
+        "reference": "classic@ea620b2f7a2ec8e9c446db102cc74641931e674e",
+        "observedAt": "2026-10-09T23:31:02Z"
       }
     },
     {
