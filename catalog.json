@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T11:11:44Z",
+  "generatedAt": "2026-10-13T12:43:47Z",
   "clients": [
     {
       "id": "wow_forever",
@@ -32,13 +32,13 @@
       "id": "classic_anniversary",
       "name": "WoW Classic Anniversary",
       "version": "2.5.6",
-      "build": 69795,
+      "build": 70006,
       "interface": 20506,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic_anniversary@1463c686270b6c64e2c5c228f447c4597c0f8ba6",
-        "observedAt": "2026-09-12T19:01:33Z"
+        "reference": "classic_anniversary@2cfec7c00f0f24762d5ca35a4beb1e93c0cde328",
+        "observedAt": "2026-10-12T20:46:20Z"
       }
     },
     {
@@ -58,13 +58,13 @@
       "id": "classic_titan",
       "name": "WoW Titan Reforged",
       "version": "3.80.2",
-      "build": 70177,
+      "build": 70315,
       "interface": 38002,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic_titan@0f73fd6b0e12bf8de89a8084ebd81aade0afe8d7",
-        "observedAt": "2026-10-07T19:01:16Z"
+        "reference": "classic_titan@25ab1ea3631ac33b0c900b495bd61c8c1f3fbd57",
+        "observedAt": "2026-10-12T19:46:24Z"
       }
     },
     {
