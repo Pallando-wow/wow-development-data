@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T12:43:47Z",
+  "generatedAt": "2026-10-14T10:15:07Z",
   "clients": [
     {
       "id": "wow_forever",
       "name": "WoW Forever",
       "version": "1.60.1",
-      "build": 70338,
+      "build": 70374,
       "interface": 16001,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "forever@943764493e6b16d63ded3ab304150d1f05e58b57",
-        "observedAt": "2026-10-10T05:16:18Z"
+        "reference": "forever@735496de78ebd30ce816a0637982c556987f258c",
+        "observedAt": "2026-10-13T23:31:15Z"
       }
     },
     {
@@ -70,14 +70,14 @@
     {
       "id": "retail",
       "name": "World of Warcraft",
-      "version": "12.1.0",
-      "build": 69933,
-      "interface": 120100,
+      "version": "12.1.5",
+      "build": 70391,
+      "interface": 120105,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "live@09b9db7948abc9b9648dedaab51eb0cf3ee67b31",
-        "observedAt": "2026-09-22T14:31:12Z"
+        "reference": "live@18c6d677b605b312f3d813d498404631fb941977",
+        "observedAt": "2026-10-13T21:16:13Z"
       }
     }
   ],
