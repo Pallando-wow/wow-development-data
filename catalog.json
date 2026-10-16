@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T10:15:07Z",
+  "generatedAt": "2026-10-16T09:52:19Z",
   "clients": [
     {
       "id": "wow_forever",
       "name": "WoW Forever",
       "version": "1.60.1",
-      "build": 70374,
+      "build": 70425,
       "interface": 16001,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "forever@735496de78ebd30ce816a0637982c556987f258c",
-        "observedAt": "2026-10-13T23:31:15Z"
+        "reference": "forever@b401e0332adfbf0460d319b06d8ea29279a941f1",
+        "observedAt": "2026-10-16T00:52:28Z"
       }
     },
     {
