@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T09:52:19Z",
+  "generatedAt": "2026-10-17T09:23:27Z",
   "clients": [
     {
       "id": "wow_forever",
       "name": "WoW Forever",
       "version": "1.60.1",
-      "build": 70425,
+      "build": 70450,
       "interface": 16001,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "forever@b401e0332adfbf0460d319b06d8ea29279a941f1",
-        "observedAt": "2026-10-16T00:52:28Z"
+        "reference": "forever@172a387e3ab85b26e6640d3058d5ec1e6ccd4c63",
+        "observedAt": "2026-10-16T22:31:27Z"
       }
     },
     {
@@ -45,39 +45,39 @@
       "id": "mists_classic",
       "name": "WoW Mists of Pandaria Classic",
       "version": "5.5.4",
-      "build": 70268,
+      "build": 70449,
       "interface": 50504,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic@ea620b2f7a2ec8e9c446db102cc74641931e674e",
-        "observedAt": "2026-10-09T23:31:02Z"
+        "reference": "classic@72cd28b019e536e9d2e82f036394ec10856d28a1",
+        "observedAt": "2026-10-16T22:31:13Z"
       }
     },
     {
       "id": "classic_titan",
       "name": "WoW Titan Reforged",
       "version": "3.80.2",
-      "build": 70315,
+      "build": 70372,
       "interface": 38002,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "classic_titan@25ab1ea3631ac33b0c900b495bd61c8c1f3fbd57",
-        "observedAt": "2026-10-12T19:46:24Z"
+        "reference": "classic_titan@65729e5e6fee59b5ced83eb7f9120e1e412ea2a7",
+        "observedAt": "2026-10-16T22:45:54Z"
       }
     },
     {
       "id": "retail",
       "name": "World of Warcraft",
       "version": "12.1.5",
-      "build": 70391,
+      "build": 70448,
       "interface": 120105,
       "source": {
         "type": "upstream-derived",
         "provider": "Gethe/wow-ui-source",
-        "reference": "live@18c6d677b605b312f3d813d498404631fb941977",
-        "observedAt": "2026-10-13T21:16:13Z"
+        "reference": "live@b9be9379719047977fca4dba1bb1d9988e8840b3",
+        "observedAt": "2026-10-16T23:16:10Z"
       }
     }
   ],
